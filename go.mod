@@ -1,4 +1,4 @@
-module github.com/pberkel/caddy-storage-redis
+module github.com/alanpearce/certmagic-storage-redis
 
 go 1.22.0
 
