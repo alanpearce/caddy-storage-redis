@@ -43,7 +43,7 @@ func provisionRedisStorage(t *testing.T) (*RedisStorage, context.Context) {
 	rs := New()
 
 	logger, _ := zap.NewProduction()
-	rs.logger = logger.Sugar()
+	rs.logger = logger
 
 	rs.DB = TestDB
 	rs.KeyPrefix = TestKeyPrefix

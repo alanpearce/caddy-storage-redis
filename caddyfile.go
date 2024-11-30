@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/spf13/cobra"
+	"go.uber.org/zap"
 
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
@@ -158,12 +159,12 @@ func (rs *RedisStorage) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 // Provision module function called by Caddy Server
 func (rs *RedisStorage) Provision(ctx caddy.Context) error {
 
-	rs.logger = ctx.Logger().Sugar()
+	rs.logger = ctx.Logger()
 
 	// Abstract this logic for testing purposes
 	err := rs.finalizeConfiguration(ctx)
 	if err == nil {
-		rs.logger.Infof("Provision Redis %s storage using address %v", rs.ClientType, rs.Address)
+		rs.logger.Info("Provision Redis storage", zap.String("client_type", rs.ClientType), zap.Strings("address", rs.Address))
 	}
 
 	return err
