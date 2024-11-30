@@ -15,8 +15,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/alanpearce/certmagic"
 	"github.com/bsm/redislock"
-	"github.com/caddyserver/certmagic"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 )

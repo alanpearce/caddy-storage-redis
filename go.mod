@@ -5,8 +5,8 @@ go 1.22.0
 toolchain go1.23.3
 
 require (
+	github.com/alanpearce/certmagic v0.21.5-0.20241130183548-380075cf3bb8
 	github.com/bsm/redislock v0.9.4
-	github.com/caddyserver/certmagic v0.21.4
 	github.com/redis/go-redis/v9 v9.7.0
 	github.com/stretchr/testify v1.9.0
 	go.uber.org/zap v1.27.0
@@ -36,5 +36,3 @@ require (
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/caddyserver/certmagic => /Users/alan/projects/github.com/caddyserver/certmagic
